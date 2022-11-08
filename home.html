@@ -6,19 +6,26 @@
 <div class="page-container">
     <a href="https://scd-links.herokuapp.com/help/help.html">open help</a>
     <!-- <input id="inputField" type="text" value="text to copy"> -->
-    <button class="button" onclick="openProdApp()">Open PROD App</button>
+    <button class="button" onclick="start()">Open PROD App</button>
   </div>
 
 
 <script>
 
-function openProdApp() {
-  // var copyText = document.getElementById("inputField");
-  // copyText.select(); 
-  // copyText.setSelectionRange(0, 99999); // For mobile devices
-  window.open("https://scd-links.herokuapp.com/products/products-prod.html")
-  navigator.clipboard.writeText('cashback product');
+function start() {
+  copyToClipBoard().then(
+    function(value) { openProdApp() }
+  );
 }
+
+function openProdApp() {
+  window.open("https://scd-links.herokuapp.com/products/products-prod.html")
+}
+
+async function copyToClipBoard() {
+  navigator.clipboard.writeText('cashback-product');
+}
+
 
 </script>
 
