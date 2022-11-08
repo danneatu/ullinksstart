@@ -13,19 +13,20 @@
 <script>
 
 function start() {
-
-setTimeout(async () => await navigator.clipboard.writeText("Cashback-product").then(function () {
-  console.log("Copy to clipboard open app.");
-  openProdApp() 
-}, function () {
-      console.log("Copy to clipboard unsuccessfully.");
-   })
-);
+    navigator.clipboard
+      .writeText('test')
+      .then(() => {
+      openProdApp()
+       // alert("successfully copied");
+      })
+      .catch(() => {
+        alert("something went wrong");
+      });
 }
+
 function openProdApp() {
   window.open("https://scd-links.herokuapp.com/products/products-prod.html")
 }
-
 
 
 </script>
