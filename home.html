@@ -5,6 +5,7 @@
 <body>
 <div class="page-container">
     <a href="https://scd-links.herokuapp.com/help/help.html">open help</a>
+    <!-- <input id="inputField" type="text" value="text to copy"> -->
     <button class="button" onclick="openProdApp()">Open PROD App</button>
   </div>
 
@@ -12,7 +13,10 @@
 <script>
 
 function openProdApp() {
-  navigator.clipboard.writeText('cashback programm');
+  // var copyText = document.getElementById("inputField");
+  // copyText.select(); 
+  // copyText.setSelectionRange(0, 99999); // For mobile devices
+  // navigator.clipboard.writeText(copyText.value);
   window.open("https://scd-links.herokuapp.com/products/products-prod.html")
 }
 
