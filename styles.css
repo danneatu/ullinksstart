@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .page-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    gap: 20px;
+    background-color: rgb(227, 227, 227);
+  }
+
+  button {
+    padding: 12px 38px;
+    border-radius: 2px;
+    border-style: none;
+    font-size: 2.5rem;
+    margin: 3px;
+    background-color: #037ffc;
+    color: #fff;
+    border-radius: 20px;
+  }
+
+  a {
+    font-size: 2.5rem;
+  }
+
+  #inputField {
+    font-size: 18pt;
+    height: 42px;
+    width : 300px;
+}
