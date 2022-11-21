@@ -1,35 +1,18 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" href="styles.css">
-
+    <meta name="apple-itunes-app" content="app-id=1181860241, app-argument=my.url.cashback">
 <body>
 <div class="page-container">
-    <a href="https://scd-links.herokuapp.com/help/help.html">open help</a>
-    <!-- <input id="inputField" type="text" value="text to copy"> -->
-    <button class="button" onclick="start()">Open PROD App</button>
+  <img src="./cashback_card.png" alt="cashback_product">
+    <p>Cashback product selected</p>
+    <button class="button" onclick="openProdApp()">Continue in app</button>
   </div>
-
-
 <script>
 
-function start() {
-  openProdApp()
-
-    // navigator.clipboard
-    //   .writeText('test')
-    //   .then(() => {
-    //   openProdApp()
-    //    // alert("successfully copied");
-    //   })
-    //   .catch(() => {
-    //     alert("something went wrong");
-    //   });
-}
-
 function openProdApp() {
-  window.open("https://scd-links.herokuapp.com/products/products-prod.html")
+  window.open("https://scd-links.herokuapp.com/products/products-prod.html?productId=24")
 }
-
 
 </script>
 

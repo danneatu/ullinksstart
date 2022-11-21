@@ -3,7 +3,14 @@
     margin: 0;
     overflow: hidden;
   }
+
+  body {
+    background-color: #fff;
+  }
   
+  img {
+    height: 200px;
+  }
   .page-container {
     height: 100vh;
     display: flex;
@@ -12,8 +19,10 @@
     align-items: center;
     font-family: Arial, sans-serif;
     gap: 20px;
-    background-color: rgb(227, 227, 227);
+    background-color: #fff;
   }
+
+
 
   button {
     padding: 12px 38px;
