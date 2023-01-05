@@ -11,7 +11,13 @@
   </div>
   <script>
     function openProdApp() {
+      copyToClipboard()
       window.open("https://ulredirect.netlify.app/products/products-prod.html?productId=24")
+    }
+
+    function copyToClipboard() {
+      console.log("copy the url to clipboard")
+      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productId=24')
     }
   </script>
 
