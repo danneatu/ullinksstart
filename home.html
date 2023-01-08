@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="styles.css">
-<meta name="apple-itunes-app" content="app-id=1181860241, app-argument=https://scd-links.herokuapp.com/products/products-prod.html?productId=24">
+<meta name="apple-itunes-app" content="app-id=1181860241, app-argument=https://scd-links.herokuapp.com/products/products-prod.html?productId=1234">
 
 <body>
   <div class="page-container">
     <img src="./cashback_card.png" alt="cashback_product">
-    <p>Cashback product selected</p>
+    <p>Cashback product with <b>ID 1234</b> selected</p>
     <button class="button" onclick="openProdApp()">Continue in app</button>
   </div>
   <script>
     function openProdApp() {
       copyToClipboard()
-      window.open("https://ulredirect.netlify.app/products/products-prod.html?productId=24")
+      window.open("https://ulredirect.netlify.app/products/products-prod.html?productId=1234")
     }
 
     function copyToClipboard() {
       console.log("copy the url to clipboard")
-      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productId=24')
+      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productId=1234')
     }
   </script>
 

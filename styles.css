@@ -8,6 +8,10 @@
   body {
     background-color: #fff;
   }
+
+  p {
+    font-size: 16pt;
+  }
   
   img {
     height: 200px;
