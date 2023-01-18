@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="styles.css">
-<meta name="apple-itunes-app" content="app-id=1181860241, app-argument=https://scd-links.herokuapp.com/products/products-prod.html?productId=UACBC">
-
 <body>
   <div class="page-container">
     <img src="./cashback_card.png" alt="cashback_product">
     <p>Cashback product with <b>ID UACBC</b> selected</p>
     <button class="button" onclick="openProdApp()">Continue in app</button>
+    <button class="button" onclick="openProdApp(false)">Continue in app (skip IDNow)</button>
   </div>
   <script>
-    function openProdApp() {
-      copyToClipboard()
-      window.open("https://ulredirect.netlify.app/products/products-prod.html?productId=UACBC")
+    function openProdApp(isIDNowActive = true) {
+      platform = isIDNowActive ? "ios" : "desktop"
+      copyToClipboard(platform)
+      window.open('https://ulredirect.netlify.app/products/products-prod.html?productId=UACBC&platform=' + platform)
     }
 
-    function copyToClipboard() {
+    function copyToClipboard(platform) {
       console.log("copy the url to clipboard")
-      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productId=UACBC')
+      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productId=UACBC&platform=' + platform)
     }
   </script>
 
