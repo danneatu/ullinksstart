@@ -29,15 +29,28 @@
 
 
 
-  button {
+  .button {
     padding: 12px 38px;
     border-radius: 2px;
     border-style: none;
     font-size: 2.5rem;
-    margin: 3px;
+    margin: 30px;
     background-color: #037ffc;
     color: #fff;
     border-radius: 20px;
+    height: 100px;
+  }
+
+  .skipIdNowButton {
+    padding: 12px 38px;
+    border-radius: 2px;
+    border-style: none;
+    font-size: 2.5rem;
+    margin: 30px;
+    background-color: #05a484;
+    color: #fff;
+    border-radius: 20px;
+    height: 100px;
   }
 
   a {
