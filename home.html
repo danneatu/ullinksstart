@@ -12,12 +12,12 @@
     function openProdApp(isIDNowActive = true) {
       platform = isIDNowActive ? "ios" : "desktop"
       copyToClipboard(platform)
-      window.open('https://ulredirect.netlify.app/products/products-prod.html?productId=UACBC&platform=' + platform)
+      window.open('https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform)
     }
 
     function copyToClipboard(platform) {
       console.log("copy the url to clipboard")
-      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productId=UACBC&platform=' + platform)
+      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform)
     }
   </script>
 
