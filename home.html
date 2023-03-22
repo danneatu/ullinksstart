@@ -20,7 +20,7 @@
 
     function openProdAppWithSCDRedirect(isIDNowActive = true) {
       platform = isIDNowActive ? "ios" : "desktop"
-      link = 'https://redirect-nop.swisscard.ch?lang=en&productCode=UACBC&platform=' + platform
+      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&platform=' + platform
       copyToClipboard(link)
       window.open(link)
     }
