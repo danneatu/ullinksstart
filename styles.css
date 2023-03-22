@@ -56,6 +56,18 @@
     height: 150px;
   }
 
+  .skipIdNowButton2 {
+    padding: 12px 38px;
+    border-radius: 2px;
+    border-style: none;
+    font-size: 3rem;
+    margin: 30px;
+    background-color: #363a39;
+    color: #fff;
+    border-radius: 20px;
+    height: 150px;
+  }
+
   a {
     font-size: 2.5rem;
   }
