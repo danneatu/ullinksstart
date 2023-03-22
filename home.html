@@ -7,18 +7,29 @@
     <p>Cashback product with <b>ID UACBC</b> selected</p>
     <button class="button" onclick="openProdApp()">Continue in app</button>
     <button class="skipIdNowButton" onclick="openProdApp(false)">Continue in app (skip IDNow)</button>
+    <button class="button" onclick="openProdAppWithSCDRedirect()">Continue in app - scd redirect</button>
+    <button class="skipIdNowButton" onclick="openProdAppWithSCDRedirect(false)">Continue in app (skip IDNow) - scd redirect</button>
   </div>
   <script>
     function openProdApp(isIDNowActive = true) {
       platform = isIDNowActive ? "ios" : "desktop"
-      copyToClipboard(platform)
-      window.open('https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform)
+      link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform
+      copyToClipboard(link)
+      window.open(link)
     }
 
-    function copyToClipboard(platform) {
-      console.log("copy the url to clipboard")
-      navigator.clipboard.writeText('https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform)
+    function openProdAppWithSCDRedirect(isIDNowActive = true) {
+      platform = isIDNowActive ? "ios" : "desktop"
+      link = 'https://redirect-nop.swisscard.ch?lang=en&productCode=UACBC&platform=' + platform
+      copyToClipboard(link)
+      window.open(link)
     }
+
+    function copyToClipboard(link) {
+      console.log("copy the url to clipboard")
+      navigator.clipboard.writeText(link)
+    }
+
   </script>
 
 </body>
