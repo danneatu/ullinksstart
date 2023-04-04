@@ -6,7 +6,8 @@
     <img src="./cashback_card.png" alt="cashback_product">
     <p>Cashback product with <b>ID UACBC</b> selected</p>
     <button class="button" onclick="openProdAppWithSCDRedirect()">Continue in app</button>
-    <button class="skipIdNowButton" onclick="openProdAppWithSCDRedirect(false)">Continue in app (skip IDNow)</button>
+    <button class="skipIdNowButton" onclick="openAppAndSkip('IDNow')">Continue in app (skip only IDNow)</button>
+    <button class="skipIdNowButton" onclick="openAppAndSkip('IDNowAndAirlock2FA')">Continue in app (skip IDNow and Airlock2FA)</button>
     <button class="skipIdNowButton2" onclick="openProdApp()">Android - Continue in app</button>
     <button class="skipIdNowButton2" onclick="openProdApp(false)">Android - Continue in app (skip IDNow)</button>
 
@@ -22,6 +23,19 @@
     function openProdAppWithSCDRedirect(isIDNowActive = true) {
       platform = isIDNowActive ? "ios" : "desktop"
       link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&platform=' + platform
+      copyToClipboard(link)
+      window.open(link)
+    }
+
+    function openAppAndSkipIDNow() {
+      shouldSkipIDNow = shouldSkipIDNow ? "IDNow" : "IDNowAndAirlock2FA"
+      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&skip=' + platform
+      copyToClipboard(link)
+      window.open(link)
+    }
+
+    function openAppAndSkip(nameOfProcessToSkip) {
+      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&skip=' + nameOfProcessToSkip
       copyToClipboard(link)
       window.open(link)
     }
