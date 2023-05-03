@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="styles.css">
+<link href="/dist/output.css" rel="stylesheet">
 <body>
-  <div class="page-container">
-    <img src="./cashback_card.png" alt="cashback_product">
-    <p>Cashback product with <b>ID UACBC</b> selected</p>
-    <button class="button" onclick="openProdAppWithSCDRedirect()">Continue in app</button>
-    <button class="skipIdNowButton" onclick="openAppAndSkip('IDNow')">Continue in app (skip only IDNow)</button>
-    <button class="skipIdNowButton" onclick="openAppAndSkip('IDNowAndAirlock2FA')">Continue in app (skip IDNow and Airlock2FA)</button>
-    <button class="skipIdNowButton2" onclick="openProdApp()">Android - Continue in app</button>
-    <button class="skipIdNowButton2" onclick="openProdApp(false)">Android - Continue in app (skip IDNow)</button>
+
+  <div class="flex justify-center items-center flex-col gap-12 mt-8">
+    <div class="rounded shadow-lg flex flex-col justify-center items-center p-4">
+      <img class="lg:w-64 md:w-96" src="./cashback_card.png" alt="cashback_product">
+      <p class="text-3xl">Cashback product width <b>ID UACBC</b> selected</p>
+    </div>
+    <div class="flex items-center mt-0">
+      <input  class="md:w-20 md:h-20 md:mr-8 lg:w-8 lg:h-8 lg:mr-1" id="hasRememberMeCheckbox" type="checkbox" value="">
+      <label for="hasRememberMeCheckbox"
+        class="ml-0 lg:text-2xl font-medium md:text-5xl m-0">set hasRememberMe flag</label>
+    </div>
+    <div class="flex flex-col gap-6">
+    <button class="btn btn-blue" onclick="openAppWithSCDRedirect()">
+      Continue in app
+    </button>
+    <button class="btn btn-blue" onclick="openAppAndSkip('IDNow')">
+      Continue in app - skip IDNow
+    </button>
+    <button class="btn btn-blue" onclick="openAppAndSkip('IDNowAndAirlock2FA')">
+      Continue in app - skip IDNow & Airlock2FA
+    </button>
+
 
   </div>
+  <div class="flex m-8">
+    <label class="block m-5 lg:text-2xl md:text-2xl md:text-clip-1 p-10" id="link_label">empty</label>
+  </div>
   <script>
+
+    function isHasRememberMeChecked() {
+      value = document.getElementById('hasRememberMeCheckbox').checked
+      console.log(value)
+      return value
+    }
+
     function openProdApp(isIDNowActive = true) {
       platform = isIDNowActive ? "ios" : "desktop"
-      link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform
+      hasRememberMe = isHasRememberMeChecked()
+      link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform + '&hasRememberMe=' + hasRememberMe
       copyToClipboard(link)
       window.open(link)
     }
 
-    function openProdAppWithSCDRedirect(isIDNowActive = true) {
-      platform = isIDNowActive ? "ios" : "desktop"
-      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&platform=' + platform
-      copyToClipboard(link)
-      window.open(link)
-    }
-
-    function openAppAndSkipIDNow() {
-      shouldSkipIDNow = shouldSkipIDNow ? "IDNow" : "IDNowAndAirlock2FA"
-      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&skip=' + platform
+    function openAppWithSCDRedirect(isIDNowActive = true) {
+      hasRememberMe = isHasRememberMeChecked()
+      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&hasRememberMe=' + hasRememberMe
       copyToClipboard(link)
       window.open(link)
     }
 
     function openAppAndSkip(nameOfProcessToSkip) {
-      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&skip=' + nameOfProcessToSkip
+      hasRememberMe = isHasRememberMeChecked()
+      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&skip=' + nameOfProcessToSkip + '&hasRememberMe=' + hasRememberMe
       copyToClipboard(link)
       window.open(link)
     }
 
     function copyToClipboard(link) {
+      document.getElementById('link_label').innerHTML = link
       console.log("copy the url to clipboard")
       navigator.clipboard.writeText(link)
     }
