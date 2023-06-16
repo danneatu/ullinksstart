@@ -11,7 +11,7 @@
             const productCode = urlParams.get('productCode')
             console.log(productCode);
             link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=' + productCode;
-            window.open(link)
+            window.location.href = link
         }
         window.onload = openRedirectPage;
         </script>
