@@ -10,7 +10,8 @@
             const urlParams = new URLSearchParams(queryString);
             const productCode = urlParams.get('productCode')
             console.log(productCode);
-            window.location.replace('https://ulredirect.netlify.app/products/products-prod.html?productCode=' + productCode)
+            link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=' + productCode;
+            window.open(link)
         }
         window.onload = openRedirectPage;
         </script>
