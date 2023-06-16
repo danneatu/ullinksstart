@@ -4,10 +4,15 @@
         <title>Test</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <script type="text/javascript">
-        function codeAddress() {
-            alert('on start');
+        function openRedirectPage() {
+            const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+            const productCode = urlParams.get('productCode')
+            console.log(productCode);
+            window.location.replace('https://ulredirect.netlify.app/products/products-prod.html?productCode=' + productCode)
         }
-        window.onload = codeAddress;
+        window.onload = openRedirectPage;
         </script>
     </head>
     <body>
