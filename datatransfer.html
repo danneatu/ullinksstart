@@ -10,17 +10,17 @@
             const urlParams = new URLSearchParams(queryString);
             const productCode = urlParams.get('productCode')
             console.log(productCode);
-            link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=' + productCode;
+            link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=' + productCode;
             window.location.href = link
         }
-        // window.onload = openRedirectPage;
+        window.onload = openRedirectPage;
         </script>
     </head>
     <body>
-        <div class="flex justcenter mx-auto" >
+        <!-- <div class="flex justcenter mx-auto" >
             <button class="btn btn-blue" onclick="openRedirectPage()">
                 Open redirect page
             </button>
-        </div>
+        </div> -->
     </body>
 </html>
