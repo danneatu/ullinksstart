@@ -13,10 +13,14 @@
             link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=' + productCode;
             window.location.href = link
         }
-        window.onload = openRedirectPage;
+        // window.onload = openRedirectPage;
         </script>
     </head>
     <body>
-    
+        <div class="flex justcenter mx-auto" >
+            <button class="btn btn-blue" onclick="openRedirectPage()">
+                Open redirect page
+            </button>
+        </div>
     </body>
 </html>
