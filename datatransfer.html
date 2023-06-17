@@ -10,9 +10,29 @@
             const urlParams = new URLSearchParams(queryString);
             const productCode = urlParams.get('productCode')
             console.log(productCode);
-            link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=' + productCode;
+            
+            if (productCode !== null) {
+                document.cookie = 'productCode=' + productCode;
+            }
+
+            let code = getCookie("productCode")
+            link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=' + code;
             window.location.href = link
         }
+
+            function getCookie(cookieName) {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = cookies[i].trim();
+                        if (cookie.indexOf(cookieName + '=') === 0) {
+                            return cookie.substring(cookieName.length + 1);
+                        }
+                    }
+
+                    return null;
+                }
+
+
         window.onload = openRedirectPage;
         </script>
     </head>
