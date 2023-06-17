@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Test</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript">
+
+<head>
+    <title>Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
         function openRedirectPage() {
             const queryString = window.location.search;
             console.log(queryString);
             const urlParams = new URLSearchParams(queryString);
             const productCode = urlParams.get('productCode')
             console.log(productCode);
-            
+
             if (productCode !== null) {
                 document.cookie = 'productCode=' + productCode;
             }
@@ -20,27 +21,23 @@
             window.location.href = link
         }
 
-            function getCookie(cookieName) {
-                    var cookies = document.cookie.split(';');
-                    for (var i = 0; i < cookies.length; i++) {
-                        var cookie = cookies[i].trim();
-                        if (cookie.indexOf(cookieName + '=') === 0) {
-                            return cookie.substring(cookieName.length + 1);
-                        }
-                    }
-
-                    return null;
+        function getCookie(cookieName) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(cookieName + '=') === 0) {
+                    return cookie.substring(cookieName.length + 1);
                 }
+            }
 
+            return null;
+        }
 
         window.onload = openRedirectPage;
-        </script>
-    </head>
-    <body>
-        <!-- <div class="flex justcenter mx-auto" >
-            <button class="btn btn-blue" onclick="openRedirectPage()">
-                Open redirect page
-            </button>
-        </div> -->
-    </body>
+    </script>
+</head>
+
+<body>
+</body>
+
 </html>
