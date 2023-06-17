@@ -3,20 +3,22 @@
 <link rel="stylesheet" href="styles.css">
 <link href="/dist/output.css" rel="stylesheet">
 <body>
-
-  <div class="flex justify-center items-center flex-col gap-12 mt-8">
-    <div class="rounded shadow-lg flex flex-col justify-center items-center p-4">
-      <img class="lg:w-64 md:w-96" src="./cashback_card.png" alt="cashback_product">
-      <p class="text-3xl">Cashback product width <b>ID UACBC</b> selected</p>
+    <div class="h-screen mx-auto flex justify-center items-center bg-slate-400">
+        <div class="flex justify-center items-center flex-col gap-12 mt-8">
+            <div class="rounded shadow-lg flex flex-col justify-center items-center p-4">
+              <img class="lg:w-64 md:w-96" src="./cashback_card.png" alt="cashback_product">
+              <p class="text-3xl">Cashback product width <b>ID UACBC</b> selected</p>
+            </div>
+            <div class="flex flex-col gap-6">
+            <button class="btn btn-blue" onclick="openRedirectPage()">
+                Open app
+            </button>
+          </div>
+          <div class="flex m-8">
+            <label class="block m-5 lg:text-2xl md:text-2xl md:text-clip-1 p-10" id="link_label"></label>
+          </div>
     </div>
-    <div class="flex flex-col gap-6">
-    <button class="btn btn-blue" onclick="openRedirectPage()">
-        Open app
-    </button>
-  </div>
-  <div class="flex m-8">
-    <label class="block m-5 lg:text-2xl md:text-2xl md:text-clip-1 p-10" id="link_label"></label>
-  </div>
+
   <script>
 
     function openRedirectPage() {
