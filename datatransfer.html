@@ -7,10 +7,8 @@
     <script type="text/javascript">
         function openRedirectPage() {
             const queryString = window.location.search;
-            console.log(queryString);
             const urlParams = new URLSearchParams(queryString);
             const productCode = urlParams.get('productCode')
-            console.log(productCode);
 
             if (productCode !== null) {
                 document.cookie = 'productCode=' + productCode;
