@@ -17,7 +17,13 @@
             }
 
             let code = getCookie("productCode")
-            link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=' + code;
+
+            let prodcutCodeParam = ""
+            if (code !== null) {
+                prodcutCodeParam = 'productCode=' + code
+            }
+
+            link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&' + prodcutCodeParam;
             window.location.href = link
         }
 
