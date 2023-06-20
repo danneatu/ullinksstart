@@ -534,6 +534,11 @@ video {
   margin: 2rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .ml-0 {
   margin-left: 0px;
 }
@@ -554,8 +559,8 @@ video {
   display: flex;
 }
 
-.flex-grow-0 {
-  flex-grow: 0;
+.h-screen {
+  height: 100vh;
 }
 
 .flex-col {
