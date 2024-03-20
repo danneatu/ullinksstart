@@ -5,6 +5,7 @@
 <body>
 
   <div class="flex justify-center items-center flex-col gap-12 mt-8">
+    <p>UAT</p>
     <div class="rounded shadow-lg flex flex-col justify-center items-center p-4">
       <img class="lg:w-64 md:w-96" src="./cashback_card.png" alt="cashback_product">
       <p class="text-3xl">Cashback product width <b>ID UACBC</b> selected</p>
@@ -41,21 +42,21 @@
     function openProdApp(isIDNowActive = true) {
       platform = isIDNowActive ? "ios" : "desktop"
       hasRememberMe = isHasRememberMeChecked()
-      link = 'https://ulredirect.netlify.app/products/products-prod.html?productCode=UACBC&platform=' + platform + '&hasRememberMe=' + hasRememberMe
+      link = 'https://ulredirect.netlify.app/products/products-prod.html?feature=dfnox&productCode=UACBC&platform=' + platform + '&hasRememberMe=' + hasRememberMe
       copyToClipboard(link)
       window.open(link)
     }
 
     function openAppWithSCDRedirect(isIDNowActive = true) {
       hasRememberMe = isHasRememberMeChecked()
-      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&hasRememberMe=' + hasRememberMe
+      link = 'https://redirect-nop.swisscard.ch/index.html?feature=dfnox&lang=en&productCode=UACBC&hasRememberMe=' + hasRememberMe
       copyToClipboard(link)
       window.open(link)
     }
 
     function openAppAndSkip(nameOfProcessToSkip) {
       hasRememberMe = isHasRememberMeChecked()
-      link = 'https://redirect-nop.swisscard.ch/index.html?lang=en&productCode=UACBC&skip=' + nameOfProcessToSkip + '&hasRememberMe=' + hasRememberMe
+      link = 'https://redirect-nop.swisscard.ch/index.html?feature=dfnox&lang=en&productCode=UACBC&skip=' + nameOfProcessToSkip + '&hasRememberMe=' + hasRememberMe
       copyToClipboard(link)
       window.open(link)
     }
